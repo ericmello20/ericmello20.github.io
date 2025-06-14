@@ -473,10 +473,16 @@
 
     btn03.addEventListener("click", () => {
       let lances = [0, 0, 0, 0, 0, 0]; //6 faces do dado
-      let x = 0;
+      let x = 1000000;
       console.log(lancadorDados());
       for (let i = 0; i < 1000000; i++) {
         lances[Math.floor(Math.random() * 6)]++;
+      }
+
+      for (let i = 0; i < 6; i++) {
+        document.querySelector(`.face-ocorr-${i + 1}`).textContent = lances[i];
+        document.querySelector(`.face-freq-${i + 1}`).textContent =
+          ((lances[1] / x) * 100).toFixed(2) + "%";
       }
     });
     //for(let i=0; i<1000000; i++){
@@ -502,7 +508,11 @@
 
     const inverteNome = (nome) => {
       //programe inverte nome aqui
-      return "teste";
+      let invertido = "";
+      for (let i = nome.length - 1; i >= 0; i--) {
+        invertido += nome[i]; // imprime letra por letra
+      }
+      return invertido;
     };
 
     // insere nome digitado
@@ -535,8 +545,16 @@
       //palavra[2] == palavra[palavra.length-3] ...
       // até chegar no meio; se todas iguais, é palíndromo
       // caso contrário, não
-      return false; // programe aqui
+      //programe inverte nome aqui
+
+      for (let i = 0; i < palavra.length / 2; i++) {
+        if (palavra[i] != palavra[palavra.length - i - 1]) {
+          return false;
+        }
+      }
+      return true;
     };
+
     btn05.addEventListener("click", () => {
       const palavra = getPalavra();
       const resp = document.querySelector("#q05-result");
