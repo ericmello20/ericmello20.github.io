@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+#catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.filme {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  width: 300px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.filme img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.classificacao-0 {
+  background-color: green;
+  color: white;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.classificacao-14 {
+  background-color: yellow;
+  color: black;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.classificacao-18 {
+  background-color: red;
+  color: white;
+  padding: 4px;
+  border-radius: 6px;
+}
